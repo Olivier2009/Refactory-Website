@@ -1,0 +1,605 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #0A2240;
+    background: #f8f9fb;
+}
+:root{
+  --bg:#ffffff;
+  --text:#0f1724;
+  --muted:#6b7280;
+  --accent:#0f1724;
+  --primary:#0b5fff;
+  --container:1100px;
+  --radius:12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:12px;
+  top:12px;
+  width:auto;
+  height:auto;
+  background:#000;
+  color:#fff;
+  padding:8px 12px;
+  z-index:1000;
+}
+
+/* Header */
+.site-header{
+  border-bottom:1px solid #e6edf5;
+  background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.95));
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 0;
+}
+.brand img{
+  display:block
+}
+
+/* Nav */
+.main-nav{position:relative}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:1px solid #d1e3ff;
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.nav-list{
+  list-style:none;
+  display:flex;
+  gap:16px;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.nav-list a{ 
+  text-decoration:none;
+  color:var(--text); 
+  font-weight:600; 
+  font-size:15px
+  }
+
+
+/* Hero */
+.main{
+  margin: flex;
+
+}
+.hero{
+  padding:48px 0;
+  background-image: url('https://refactory.academy/wp-content/uploads/2025/08/0G2A8223-2048x1365.jpg');
+  background-size: cover;   
+  background-position: center;
+  background-repeat: no-repeat;  
+  position: relative;
+  padding: 120px 0;
+
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:40px;
+  align-items:center;
+  
+}
+.hero-content{
+   position: relative;
+   z-index: 2; 
+   color: white;
+   text-align: center; 
+}
+.lead{color:white; margin:0 0 18px}
+.hero-art img{width:100%; height:auto; border-radius:12px; display:block; background:yellow}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid transparent;
+  font-weight:600;
+}
+.btn.partner{
+    background-color: palevioletred;
+    color: white;
+    box-shadow: 0 6px 18px rgba(11,95.255.0.12);
+}
+.btn.primary{
+  background:rgb(177, 177, 42);
+  color:white;
+  box-shadow:0 6px 18px rgba(11,95,255,0.12);
+}
+.btn.ghost{
+  background:white;
+  color:var(pink);
+  border:1px solid #e6edf5;
+}
+/* SECTION LAYOUT */
+.academy-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 80px 8%;
+    background-color:whitesmoke; 
+}
+
+/* LEFT TEXT BLOCK */
+.academy-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.academy-text h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #6b1e7c; /* purple title */
+    margin-bottom: 10px;
+}
+
+.academy-text h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #13b8c8; /* teal subtitle */
+    margin-bottom: 20px;
+}
+
+.academy-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+.learn-more-btn {
+    display: inline-block;
+    background-color: #cddc39; 
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+.learn-more-btn:hover {
+    background-color: #d9e651;
+}
+
+/* RIGHT IMAGE SECTION */
+.academy-image {
+    flex: 1.2;
+}
+
+.academy-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+#dream {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 20px auto;
+    color: #047b83;
+}
+
+#courses-title {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: #6b1e7c;
+    font-size: 30px;
+}
+
+
+/* Featured cards */
+.featured{
+  padding:36px 0
+}
+.featured .sub{
+  color:var(--muted);
+   margin-top:6px
+  }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:18px;
+}
+.card{
+  background:white;
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(12,24,40,0.04);
+}
+.card h3{
+  margin:8px 0 6px
+}
+.card p{
+  margin:0 0 10px;
+  color:var(--muted)
+}
+/* btn-link */
+.btn-link{
+  display:inline-block;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid transparent;
+  font-weight:600;
+}
+.card .btn-link{
+  font-weight:600;
+   text-decoration:none;
+   background: rgb(209, 209, 70);
+   color: white;
+   
+  }
+/* Refactory success */
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  flex-wrap: wrap;
+  margin: 0;
+  background:blueviolet ;
+  font-family:Arial, Helvetica, sans-serif ;
+  color: white;
+}
+
+.images {
+  position: relative;
+  width: 500px;
+  height: 600px;
+}
+
+.img {
+  width: 380px;
+  border: 12px solid white;
+  border-radius: 10px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.img1 {
+  transform: rotate(-8deg);
+}
+
+.img2 {
+  transform: rotate(10deg);
+  top: 260px;
+  left: 80px;
+}
+
+.stats {
+  max-width: 500px;
+}
+
+.stats h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.stat h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.stat p {
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+
+/* LEFT CONTENT */
+.container-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px;
+    gap: 40px;
+}
+
+.left {
+    width: 45%;
+}
+
+.title {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #043d83;
+}
+
+.subtitle {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.logos img {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #d5e047;
+    color: #0A2240;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.right img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* RIGHT IMAGE */
+.right {
+    width: 50%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+}
+
+/* Banner Container */
+.summit-banner {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  background-image: url('https://refactory.academy/wp-content/uploads/2025/08/The-Digital-Solutions-Expo-2025-171-1024x563.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  gap: 80;
+}
+
+/* Dark overlay for readability */
+.summit-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 20, 60, 0.45);
+}
+
+/* Main content grid */
+.summit-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 200px 1fr 200px;
+  align-items: center;
+  padding: 0 40px;
+}
+
+/* Left Logo */
+.summit-logo img {
+  width: 130px;
+  height: auto;
+}
+
+/* Title */
+.summit-title {
+  color: white;
+  text-align: center;
+  font-size: 42px;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Button */
+.summit-btn {
+  background: #d5e047;
+  padding: 16px 26px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 18px;
+  justify-self: end;
+}
+
+/* Hover effect */
+.summit-btn:hover {
+  background: #e6f15b;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .summit-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .summit-btn {
+    justify-self: center;
+  }
+
+  .summit-title {
+    font-size: 32px;
+  }
+}
+
+/* Footer Wrapper */
+.footer {
+  background: linear-gradient(90deg, #1b0a50, #3a0068, #5b0e7a);
+  color: white;
+  padding: 60px 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Grid */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Brand Column */
+.footer-logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  line-height: 1.6;
+  max-width: 270px;
+}
+
+
+/* social media */
+/* Social Icons */
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+/* Column Titles */
+.footer-column h3 {
+  font-size: 35px;
+  color: #2ee3f6;
+  margin-bottom: 25px;
+}
+
+/* Lists */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* Contact List */
+.contact-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Location Link */
+.location-link {
+  margin-top: 20px;
+  color: green;
+  font-size: 18px;
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons a img {
+    margin: 10px;
+  }
+
+  .footer-about p {
+    margin: 0 auto;
+  }
+}
+
+
